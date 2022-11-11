@@ -1,98 +1,144 @@
-import { NextSeo } from "next-seo";
-import Layout from "@components/layout";
-import Container from "@components/container";
-import { useRouter } from "next/router";
-import { getClient, usePreviewSubscription } from "@lib/sanity";
-import defaultOG from "../public/img/opengraph.jpg";
-import { postquery, configQuery } from "@lib/groq";
-import GetImage from "@utils/getImage";
-import PostList from "@components/postlist";
+import Link from "next/link";
+import Hero from "@components/hero";
+import { FaBaby } from "react-icons/fa";
 
-export default function Post(props) {
-  const { postdata, siteconfig, preview } = props;
+const Services = () => {
+  return (
+    <section className="dark:bg-gray-900  text-black dark:text-gray-400">
+      <div className="max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="max-w-xl">
+          <h2 className="text-3xl font-bold sm:text-4xl">
+            What makes us special
+          </h2>
 
-  const router = useRouter();
-  //console.log(router.query.category);
+          <p className="mt-4 text-black dark:text-gray-400">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Repellat dolores iure fugit totam iste obcaecati.
+          </p>
+        </div>
 
-  const { data: posts } = usePreviewSubscription(postquery, {
-    initialData: postdata,
-    enabled: preview || router.query.preview !== undefined
-  });
+        <div className="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
+          <div className="flex items-start">
+            <span className="flex-shrink-0 rounded-lg bg-gray-800 p-4">
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
+              </svg>
+            </span>
 
-  const { data: siteConfig } = usePreviewSubscription(configQuery, {
-    initialData: siteconfig,
-    enabled: preview || router.query.preview !== undefined
-  });
-  //console.log(posts);
-  const ogimage = siteConfig?.openGraphImage
-    ? GetImage(siteConfig?.openGraphImage).src
-    : defaultOG.src;
+            <div className="ml-4">
+              <h2 className="text-lg font-bold">Parties.</h2>
+
+              <p className="mt-1 text-sm text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing
+                elit.
+              </p>
+              <span>
+                <Link href="/">
+                  <a> </a>
+                </Link>
+              </span>
+            </div>
+          </div>
+
+          <div className="flex items-start">
+            <span className="flex-shrink-0 rounded-lg bg-gray-800 p-4">
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
+              </svg>
+            </span>
+
+            <div className="ml-4">
+              <h2 className="text-lg font-bold">Dinner parties.</h2>
+
+              <p className="mt-1 text-sm text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing
+                elit.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start">
+            <span className="flex-shrink-0 rounded-lg bg-gray-800 p-4">
+              <FaBaby />
+            </span>
+
+            <div className="ml-4">
+              <h2 className="text-lg font-bold">Baby Showers.</h2>
+
+              <p className="mt-1 text-sm text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing
+                elit.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start">
+            <span className="flex-shrink-0 rounded-lg bg-gray-800 p-4">
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
+              </svg>
+            </span>
+
+            <div className="ml-4">
+              <h2 className="text-lg font-bold">And Many More!</h2>
+
+              <p className="mt-1 text-sm text-gray-400">
+                Do you have an event in mind that you don't see here?
+                Contact us and we can make it happen!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+export default function Home() {
   return (
     <>
-      {posts && siteConfig && (
-        <Layout {...siteConfig}>
-          <NextSeo
-            title={`${siteConfig?.title}`}
-            description={siteConfig?.description || ""}
-            canonical={siteConfig?.url}
-            openGraph={{
-              url: siteConfig?.url,
-              title: `${siteConfig?.title}`,
-              description: siteConfig?.description || "",
-              images: [
-                {
-                  url: ogimage,
-                  width: 800,
-                  height: 600,
-                  alt: ""
-                }
-              ],
-              site_name: "Stablo"
-            }}
-            twitter={{
-              cardType: "summary_large_image"
-            }}
-          />
-          <Container>
-            <div className="grid gap-10 lg:gap-10 md:grid-cols-2 ">
-              {posts.slice(0, 2).map(post => (
-                <PostList
-                  key={post._id}
-                  post={post}
-                  aspect="landscape"
-                  preloadImage={true}
-                />
-              ))}
-            </div>
-            <div className="grid gap-10 mt-10 lg:gap-10 md:grid-cols-2 xl:grid-cols-3 ">
-              {posts.slice(2).map(post => (
-                <PostList
-                  key={post._id}
-                  post={post}
-                  aspect="square"
-                />
-              ))}
-            </div>
-          </Container>
-        </Layout>
-      )}
+      <Hero />
+      <Services />
+
+      
     </>
   );
-}
+};
 
-export async function getStaticProps({ params, preview = false }) {
-  const post = await getClient(preview).fetch(postquery);
-  const config = await getClient(preview).fetch(configQuery);
 
-  // const categories = (await client.fetch(catquery)) || null;
 
-  return {
-    props: {
-      postdata: post,
-      // categories: categories,
-      siteconfig: { ...config },
-      preview
-    },
-    revalidate: 10
-  };
-}
+

@@ -1,11 +1,11 @@
 {
     "version": 2,
-    "title": "Stablo Next.js Minimal Blog Template",
-    "description": "Stablo is a Minimalblog website template built with Next.js, TailwindCSS & Sanity CMS",
+    "title": "Events By Jess",
+    "description": "Events By Jess is an event management company",
     "previewMedia": {
         "type": "image",
         "src": "public/img/opengraph.jpg",
-        "alt": "Stablo Next.js Minimal Blog Template"
+        "alt": "Events By Jess"
     },
     "technologies": [{
             "id": "vercel",

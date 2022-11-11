@@ -1,6 +1,6 @@
 
 {
-    "extends": ["next"],
+    "extends": ["next", "next/babel"],
     "rules": {
     "react/jsx-no-target-blank": [2, { "allowReferrer": true }],
     "react/display-name": [0, { "ignoreTranspilerName": false }]

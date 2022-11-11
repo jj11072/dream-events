@@ -3,7 +3,7 @@ export default {
   type: "document",
   title: "Site Settings",
   __experimental_actions: [
-    /* "create", "delete", */ "update",
+     "create", "delete", "update",
     "publish"
   ],
   fieldsets: [

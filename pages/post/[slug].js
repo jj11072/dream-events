@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import Layout from "@components/layout";
+
 import Container from "@components/container";
 import { useRouter } from "next/router";
 import client, {
@@ -44,7 +44,7 @@ export default function Post(props) {
     : null;
 
   const AuthorimageProps = post?.author?.image
-    ? GetImage(post.author.image)
+    ? GetImage(post.author?.image)
     : null;
 
   const ogimage = siteConfig?.openGraphImage
@@ -54,7 +54,7 @@ export default function Post(props) {
   return (
     <>
       {post && siteConfig && (
-        <Layout {...siteConfig}>
+        <>
           <NextSeo
             title={`${post.title} - ${siteConfig.title}`}
             description={post.excerpt || ""}
@@ -118,13 +118,14 @@ export default function Post(props) {
                         alt={post?.author?.name}
                         placeholder="blur"
                         layout="fill"
-                        className="rounded-full"
+                        className="rounded-full
+                         "
                       />
                     )}
                   </div>
                   <div>
                     <p className="text-gray-800 dark:text-gray-400">
-                      {post.author.name}
+                      {post.author?.name}
                     </p>
                     <div className="flex items-center space-x-2 text-sm">
                       <time
@@ -164,7 +165,7 @@ export default function Post(props) {
             )}
           </div>
 
-          {/* {post?.mainImage && <MainImage image={post.mainImage} />} */}
+          {post?.mainImage && <MainImage image={post.mainImage} />}
           <Container>
             <article className="max-w-screen-md mx-auto ">
               <div className="mx-auto my-3 prose prose-base dark:prose-invert prose-a:text-blue-500">
@@ -180,7 +181,7 @@ export default function Post(props) {
               {post.author && <AuthorCard author={post.author} />}
             </article>
           </Container>
-        </Layout>
+        </>
       )}
     </>
   );

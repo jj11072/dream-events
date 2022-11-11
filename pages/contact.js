@@ -43,7 +43,7 @@ export default function Contact({ siteconfig }) {
   });
 
   return (
-    <Layout {...siteconfig}>
+    <>
       <Container>
         <h1 className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
           Contact
@@ -207,7 +207,7 @@ export default function Contact({ siteconfig }) {
           </div>
         </div>
       </Container>
-    </Layout>
+    </>
   );
 }
 

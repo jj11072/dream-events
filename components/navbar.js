@@ -24,18 +24,17 @@ export default function Navbar(props) {
 
   const rightmenu = [
     {
-      label: "Archive",
+      label: "Blog",
+      href: "/blog",
+     
+    },
+    {
+      label: "Gallery",
       href: "/archive"
     },
     {
-      label: "Pro Version",
-      href: "https://stablo-pro.web3templates.com/",
-      external: true,
-      badge: "new"
-    },
-    {
-      label: "Download",
-      href: "https://web3templates.com/templates/stablo-minimal-blog-website-template",
+      label: "Shop",
+      href: "/",
       external: true
     }
   ];
@@ -70,7 +69,7 @@ export default function Navbar(props) {
                         />
                       ) : (
                         <span className="block text-center">
-                          Stablo
+                          Events by Jess
                         </span>
                       )}
                     </a>
@@ -86,7 +85,7 @@ export default function Navbar(props) {
                         />
                       ) : (
                         <span className="block text-center">
-                          Stablo
+                          Events by Jess
                         </span>
                       )}
                     </a>
