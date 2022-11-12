@@ -10,6 +10,13 @@ import {
   MailIcon,
   PhoneIcon
 } from "@heroicons/react/outline";
+
+//create tailwindcss card component with background image, title, and description
+
+
+
+
+
 export default function Contact({ siteconfig }) {
   const {
     register,
