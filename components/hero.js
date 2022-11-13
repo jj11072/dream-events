@@ -9,7 +9,7 @@ const hero = () => {
         <div className="max-w-xl text-center sm:text-left">
           <h1 className="text-3xl font-extrabold sm:text-5xl dark:text-white">
             Let us manage your
-            <strong className="block font-extrabold text-pink-400">
+            <strong className="block font-extrabold text-pink-600">
               Dream event.
             </strong>
           </h1>
@@ -23,13 +23,13 @@ const hero = () => {
           <div className="mt-8 flex flex-wrap gap-4 text-center">
             <a
               href="#"
-              className="block w-full rounded bg-pink-400 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto">
+              className="block w-full rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-pink-700 focus:outline-none focus:ring active:bg-rose-pink sm:w-auto">
               Book Now
             </a>
 
             <a
               href="#"
-              className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto">
+              className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-pink-600 shadow hover:text-pink-700 focus:outline-none focus:ring active:text-pink-500 sm:w-auto">
               View Gallery
             </a>
           </div>

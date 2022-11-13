@@ -2,13 +2,14 @@ import Link from "next/link";
 import Hero from "@components/hero";
 const Card = ({ title, description, image, link }) => {
   return (
-    <div className="max-w-sm overflow-hidden shadow-lg rounded-md outline outline-black">
+    <div className="relative max-w-sm overflow-hidden shadow-lg rounded-md outline outline-black">
+      <div className="absolute bg-black/50 w-full h-full"></div>
       <img
         className="w-full rounded-lg"
         src={image}
         alt="Sunset in the mountains"
       />
-      <div className="px-6 py-4">
+      <div className="px-6 py-4 -mt-60 w-full z-20 text-white">
         <div className="font-bold text-xl mb-2">{title}</div>
         <p className="text-gray-700 text-base">{description}</p>
       </div>
@@ -16,15 +17,15 @@ const Card = ({ title, description, image, link }) => {
       <div className="flex ">
         <div className="px-6 py-4">
           <Link href={link}>
-            <a className="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded">
+            <a className="outline outline-2 outline-pink-600  bg-pink-600 hover:bg-pink-700 text-black font-bold py-2 px-4 rounded">
               Book Event
             </a>
           </Link>
         </div>
         <div className="px-6 py-4">
           <Link href={link}>
-            <a className="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded">
-              Book Event
+            <a className="outline outline-2 outline-pink-600 hover:bg-pink-700 text-black font-bold py-2 px-4 rounded">
+              View More
             </a>
           </Link>
         </div>
