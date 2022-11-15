@@ -25,12 +25,11 @@ export default function Navbar(props) {
   const rightmenu = [
     {
       label: "Blog",
-      href: "/blog",
-     
+      href: "/blog"
     },
     {
       label: "Gallery",
-      href: "/archive"
+      href: "/gallery"
     },
     {
       label: "Shop",
@@ -51,7 +50,7 @@ export default function Navbar(props) {
                 <div className="flex-col items-center justify-start order-1 hidden w-full md:flex md:flex-row md:justify-end md:w-auto md:order-none md:flex-1">
                   {leftmenu.map((item, index) => (
                     <Link href={item.href} key={index}>
-                      <a className="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500">
+                      <a className="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-pink-500 dark:hover:text-pink-500">
                         {item.label}
                       </a>
                     </Link>
@@ -68,8 +67,8 @@ export default function Navbar(props) {
                           priority={true}
                         />
                       ) : (
-                        <span className="block text-center">
-                          Events by Jess
+                        <span className="block text-center logo">
+                          Dream Events
                         </span>
                       )}
                     </a>
@@ -85,7 +84,7 @@ export default function Navbar(props) {
                         />
                       ) : (
                         <span className="block text-center">
-                          Events by Jess
+                          Dream Events
                         </span>
                       )}
                     </a>
@@ -118,7 +117,7 @@ export default function Navbar(props) {
                   {rightmenu.map((item, index) => (
                     <Link href={item.href} key={index}>
                       <a
-                        className="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-pink-500"
+                        className="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-pink-500 dark:hover:text-pink-500"
                         target={item.external ? "_blank" : ""}
                         rel={item.external ? "noopener" : ""}>
                         <span> {item.label}</span>
