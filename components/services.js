@@ -59,15 +59,6 @@ const Services = () => {
         </div>
 
         <div className="ml-auto mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
-          <div className="flex justify-center">
-            <Card
-              title="Baby Showers"
-              description=" we organize baby showers and provide all necessary items."
-              image="babyshower.jpg"
-              link="/baby-shower"
-              
-            />
-          </div>
 
           <div className="flex justify-center">
             <Card
@@ -82,7 +73,7 @@ const Services = () => {
             <Card
               title="Parties"
               description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-              image="babyshower.jpg"
+              image="party.jpg"
               link="/wedding"
             />
           </div>
@@ -93,6 +84,15 @@ const Services = () => {
               description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
               image="dinner-party.jpg"
               link="/wedding"
+            />
+          </div>
+          <div className="flex justify-center">
+            <Card
+              title="Baby Showers"
+              description=" we organize baby showers and provide all necessary items."
+              image="babyshower.jpg"
+              link="/baby-shower"
+              
             />
           </div>
           <div className="flex justify-center">
