@@ -5,7 +5,7 @@ import Chevron from "../components/icons/chevron";
 //create tailwindcss card component with back ground image, title, and description
 const Card = ({ title, description, image, link }) => {
   return (
-    <div className="relative flex items-center justify-center  max-w-sm h-60 overflow-hidden shadow-lg rounded-md hover:border-pink-500 hover:border-4 ">
+    <div className="relative flex items-center justify-center  max-w-sm h-60 overflow-hidden shadow-lg rounded-md ">
       <div className="absolute bg-black/50 w-full h-full"></div>
       {/* <Image
         className="w-full rounded-lg object-cover"
@@ -29,7 +29,7 @@ const Card = ({ title, description, image, link }) => {
         <div className=" flex justify-end mt-10 mr-2">
           <div className="flex-end px-6 py-4">
             <Link href={link}>
-              <a className="flex items-center outline outline-2 outline-pink-600  bg-pink-600 lg:hover:bg-pink-700 text-black dark:text-white font-bold py-2 px-4 rounded">
+              <a className="flex items-center  bg-pink-600 lg:hover:bg-pink-700 text-black dark:text-white font-bold py-2 px-4 rounded">
                 Book Event <Chevron />
               </a>
             </Link>
