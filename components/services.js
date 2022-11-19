@@ -29,7 +29,7 @@ const Card = ({ title, description, image, link }) => {
         <div className=" flex justify-end mt-10 mr-2">
           <div className="flex-end px-6 py-4">
             <Link href={link}>
-              <a className="flex items-center outline outline-2 outline-pink-600  bg-pink-600 hover:bg-pink-700 text-black dark:text-white font-bold py-2 px-4 rounded">
+              <a className="flex items-center outline outline-2 outline-pink-600  bg-pink-600 lg:hover:bg-pink-700 text-black dark:text-white font-bold py-2 px-4 rounded">
                 Book Event <Chevron />
               </a>
             </Link>
