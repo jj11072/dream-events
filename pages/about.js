@@ -4,6 +4,7 @@ import { getClient } from "@lib/sanity";
 import GetImage from "@utils/getImage";
 import Image from "next/image";
 import Link from "next/link";
+import Faq from "@components/ui/faq"
 import { PortableText } from "@lib/sanity";
 
 export default function About({ authors }) {
@@ -36,7 +37,7 @@ export default function About({ authors }) {
                   objectFit="cover"
                   sizes="(max-width: 320px) 100vw, 320px"
                 />
-                <div className="absolute opacity-0 bg-black/75 h-full hover:opacity-100 flex items-center px-2.5 ">
+                <div className="sm:hover:opacity-0 absolute opacity-0 bg-black/75 h-full md:hover:opacity-100 flex items-center px-2.5 ">
                   {author.bio && <PortableText value={author.bio} />}
                 </div>
               </div>
@@ -57,6 +58,9 @@ export default function About({ authors }) {
           <p>
             <Link href="/contact">Get in touch</Link>
           </p>
+        </div>
+        <div>
+          <Faq />
         </div>
       </Container>
     </>

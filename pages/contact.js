@@ -1,9 +1,9 @@
 import Container from "@components/container";
-import Layout from "@components/layout";
 import { getClient } from "@lib/sanity";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "use-web3forms";
+import Newsletter from "@components/news-letter";
 import { configQuery } from "@lib/groq";
 import {
   LocationMarkerIcon,
@@ -12,10 +12,6 @@ import {
 } from "@heroicons/react/outline";
 
 //create tailwindcss card component with background image, title, and description
-
-
-
-
 
 export default function Contact({ siteconfig }) {
   const {
@@ -62,12 +58,18 @@ export default function Contact({ siteconfig }) {
         <div className="grid my-10 md:grid-cols-2">
           <div className="my-10">
             <h2 className="text-2xl font-semibold dark:text-white">
-              Contact Stablo
+              Contact Dream
             </h2>
             <p className="max-w-sm mt-5">
-              Have something to say? We are here to help. Fill up the
-              form or send email or call phone.
+              Have something to say? We are here to help. contact us
+              if you have any question. If your ready for your dream
+              fill out the form to book your event.
             </p>
+            <a
+              href="/about#faq"
+              className="hover:cursor-pointer underline">
+              <p className="mt-4">frequently asked questions?</p>
+            </a>
 
             <div className="mt-5">
               <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
@@ -91,8 +93,12 @@ export default function Contact({ siteconfig }) {
                 </div>
               )}
             </div>
+            <Newsletter />
           </div>
-          <div>
+          <div id="booking" className="my-10">
+            <h2 className="text-2xl font-semibold dark:text-white">
+              Book Event
+            </h2>
             <form onSubmit={handleSubmit(onSubmit)} className="my-10">
               <input
                 type="checkbox"
@@ -102,11 +108,15 @@ export default function Contact({ siteconfig }) {
                 {...register("botcheck")}></input>
 
               <div className="mb-5">
+                <label htmlFor="full_name" className="">
+                  Full Name
+                </label>
                 <input
                   type="text"
-                  placeholder="Full Name"
+                  id="full_name"
+                  placeholder="Your Name"
                   autoComplete="false"
-                  className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-200 dark:bg-gray-900   focus:ring-4  ${
+                  className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-500 dark:bg-gray-900   focus:ring-4  ${
                     errors.name
                       ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
                       : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
@@ -124,16 +134,45 @@ export default function Contact({ siteconfig }) {
               </div>
 
               <div className="mb-5">
-                <label htmlFor="email_address" className="sr-only">
+                <label htmlFor="email_address" className="">
                   Email Address
                 </label>
                 <input
                   id="email_address"
                   type="email"
+                  placeholder="example@dream_events.com"
+                  name="email"
+                  autoComplete="false"
+                  className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-500 dark:bg-gray-900   focus:ring-4  ${
+                    errors.email
+                      ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
+                      : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
+                  }`}
+                  {...register("email", {
+                    required: "Enter your email",
+                    pattern: {
+                      value: /^\S+@\S+$/i,
+                      message: "Please enter a valid email"
+                    }
+                  })}
+                />
+                {errors.email && (
+                  <div className="mt-1 text-red-600">
+                    <small>{errors.email.message}</small>
+                  </div>
+                )}
+              </div>
+              <div className="mb-5">
+                <label htmlFor="email_address" className="">
+                  Date of event?
+                </label>
+                <input
+                  id="email_address"
+                  type="date"
                   placeholder="Email Address"
                   name="email"
                   autoComplete="false"
-                  className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-200 dark:bg-gray-900   focus:ring-4  ${
+                  className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-500 dark:bg-gray-900   focus:ring-4  ${
                     errors.email
                       ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
                       : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"

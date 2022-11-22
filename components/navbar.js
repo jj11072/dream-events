@@ -4,7 +4,6 @@ import Container from "@components/container";
 import Link from "next/link";
 import Image from "next/image";
 import GetImage from "@utils/getImage";
-import { myLoader } from "@utils/all";
 
 export default function Navbar(props) {
   const leftmenu = [
@@ -32,17 +31,17 @@ export default function Navbar(props) {
       href: "/gallery"
     },
     {
-      label: "Shop",
-      href: "/",
-      external: true
+      label: "Services",
+      href: "/services",
+      external: false
     }
   ];
 
   const mobilemenu = [...leftmenu, ...rightmenu];
 
   return (
-    <Container>
-      <nav>
+    <Container className="bg-black sticky top-0 z-40 ">
+      <nav >
         <Disclosure>
           {({ open }) => (
             <>
@@ -134,14 +133,18 @@ export default function Navbar(props) {
               <Disclosure.Panel>
                 <div className="flex flex-col items-center justify-start order-2 w-full md:hidden">
                   {mobilemenu.map((item, index) => (
-                    <Link href={item.href} key={index}>
-                      <a
-                        className="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500"
-                        target={item.external ? "_blank" : ""}
-                        rel={item.external ? "noopener" : ""}>
-                        {item.label}
-                      </a>
-                    </Link>
+                    <>
+                        <Link href={item.href} key={index}>
+                          <a
+                            className="px-5 py-2 text-md font-medium text-gray-600 dark:text-gray-400 dark:active:text-pink-500 "
+                            target={item.external ? "_blank" : ""}
+                            rel={item.external ? "noopener" : ""}>
+                            <Disclosure.Button>
+                            {item.label}
+                            </Disclosure.Button>
+                          </a>
+                        </Link>
+                    </>
                   ))}
                 </div>
               </Disclosure.Panel>
@@ -152,3 +155,6 @@ export default function Navbar(props) {
     </Container>
   );
 }
+
+
+

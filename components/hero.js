@@ -2,7 +2,7 @@ import React from "react";
 
 const hero = () => {
   return (
-    <section className="relative ">
+    <section className="relative z-50 ">
       <div className="absolute inset-0 ">
         <img
           className="w-full rounded-b-3xl object-cover h-full"
@@ -14,7 +14,7 @@ const hero = () => {
 
       <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8 z-100">
         <div className="max-w-xl text-center sm:text-left">
-          <h1 className="text-3xl font-extrabold sm:text-5xl dark:text-white">
+          <h1 className="text-5xl font-extrabold sm:text-5xl dark:text-white">
             Let us manage your
             <strong className="block font-extrabold text-pink-600">
               Dream event.
@@ -29,7 +29,7 @@ const hero = () => {
 
           <div className="mt-8 flex flex-wrap gap-4 text-center">
             <a
-              href="/contact"
+              href="/contact#booking"
               className="block w-full rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-pink-700 focus:outline-none focus:ring active:bg-rose-pink sm:w-auto">
               Book Event
             </a>

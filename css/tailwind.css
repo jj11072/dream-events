@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 
+*{
+	scroll-behaviour: smooth
+}
+

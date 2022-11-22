@@ -16,9 +16,10 @@ const ThemeSwitch = () => {
   //   }
 
   return (
-    <div className="inline-flex items-center">
-      <SunIcon className="w-4 h-4 mr-2" />
+    <div className="inline-flex items-center text-pink-600">
+      <SunIcon className="w-4 h-4 mr-2 text-pink-600" />
       <select
+        className="text-pink-600 bg-transparent border-none"
         name="themeSwitch"
         value={theme}
         onChange={e => setTheme(e.target.value)}>

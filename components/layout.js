@@ -4,7 +4,7 @@ import { NextSeo } from "next-seo";
 import GetImage from "@utils/getImage";
 import Navbar from "@components/navbar";
 // import defaultOG from "../public/img/og-default.jpg";
-
+import Newsletter from "@components/newsletter";
 import Footer from "@components/footer";
 // import PopupWidget from "../components/popupWidget";
 
@@ -45,7 +45,7 @@ export default function Layout(props) {
       <div className="antialiased text-gray-800 dark:bg-black dark:text-gray-400">
         <Navbar {...props} />
         <div>{children}</div>
-
+        <Newsletter />
         <Footer {...props} />
       </div>
     </>
