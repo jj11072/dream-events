@@ -3,8 +3,29 @@
 @tailwind utilities;
 
 
-*{
+*, html{
 	scroll-behaviour: smooth
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, picture, svg, video, canvas, iframe, embed, object {
+  max-width: 100%;
+  height: auto;
+ 
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+}
+
+input, textarea, button, select, optgroup, option {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
 }
 
 .dream{
