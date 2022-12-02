@@ -20,20 +20,35 @@ export default function Contact({ siteconfig }) {
     reset,
     watch,
     control,
-    setValue,
+
     formState: { errors, isSubmitSuccessful, isSubmitting }
   } = useForm({
     mode: "onTouched"
   });
   const [isSuccess, setIsSuccess] = useState(false);
   const [message, setMessage] = useState(false);
+  const [date, setDate] = useState("");
+  const [value, setValue] = useState("");
+
+  // const radio = useEffect(() => {
+  //    radio = document.getElementById("other");
+
+  //   return () => {
+  //     radio;
+  //   };
+  // }, [radio]);
+
+  const handleChange = e => {
+    setValue(e.target.value);
+  };
+
   // Please update the Access Key in the Sanity CMS - Site Congig Page
   const apiKey = siteconfig?.w3ckey || "YOUR_ACCESS_KEY_HERE";
 
   const { submit: onSubmit } = useWeb3Forms({
     apikey: apiKey,
-    from_name: "Stablo Template",
-    subject: "New Contact Message from Stablo Website",
+    from_name: "Events Form",
+    subject: "New Contact Message from Dream Events Website",
     onSuccess: (msg, data) => {
       setIsSuccess(true);
       setMessage(msg);
@@ -49,21 +64,21 @@ export default function Contact({ siteconfig }) {
     <>
       <Container>
         <h1 className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
-          Contact
+          Contact Us
         </h1>
         <div className="text-center">
-          <p className="text-lg">We are a here to help.</p>
+          <p className="text-lg">We are a here to help!</p>
         </div>
 
         <div className="grid my-10 md:grid-cols-2">
-          <div className="my-10">
+          <div className="my-10 ">
             <h2 className="text-2xl font-semibold dark:text-white">
               Contact Dream
             </h2>
             <p className="max-w-sm mt-5">
               Have something to say? We are here to help. contact us
-              if you have any question. If your ready for your dream
-              fill out the form to book your event.
+              if you have any question. If your ready htmlFor your
+              dream fill out the form to book your event.
             </p>
             <a
               href="/about#faq"
@@ -95,10 +110,12 @@ export default function Contact({ siteconfig }) {
             </div>
             <Newsletter />
           </div>
-          <div id="booking" className="my-10">
+          <div id="booking" className="my-10 ">
             <h2 className="text-2xl font-semibold dark:text-white">
               Book Event
             </h2>
+
+            {/* extract form to components file*/}
             <form onSubmit={handleSubmit(onSubmit)} className="my-10">
               <input
                 type="checkbox"
@@ -163,33 +180,294 @@ export default function Contact({ siteconfig }) {
                 )}
               </div>
               <div className="mb-5">
-                <label htmlFor="email_address" className="">
+                <label htmlFor="event_dates" className="">
                   Date of event?
                 </label>
                 <input
-                  id="email_address"
-                  type="date"
-                  placeholder="Email Address"
-                  name="email"
+                  id="event_date"
+                  type="datetime-local"
+                  name="date"
                   autoComplete="false"
+                  onChange={setDate}
                   className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-500 dark:bg-gray-900   focus:ring-4  ${
-                    errors.email
+                    errors.date
                       ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
                       : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
                   }`}
-                  {...register("email", {
-                    required: "Enter your email",
-                    pattern: {
-                      value: /^\S+@\S+$/i,
-                      message: "Please enter a valid email"
-                    }
+                  {...register("date", {
+                    required: "select a date and time"
                   })}
                 />
-                {errors.email && (
+                {errors.date && (
                   <div className="mt-1 text-red-600">
-                    <small>{errors.email.message}</small>
+                    <small>{errors.date.message}</small>
                   </div>
                 )}
+              </div>
+              {/*BREAK */}
+              <div className="mb-5">
+                <label htmlFor="event_theme" className="">
+                  Theme?
+                </label>
+                <input
+                  type="text"
+                  id="event_theme"
+                  placeholder="Event Theme"
+                  autoComplete="false"
+                  className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-500 dark:bg-gray-900   focus:ring-4  ${
+                    errors.theme
+                      ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
+                      : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
+                  }`}
+                  {...register("theme", {
+                    required: "Theme is required",
+                    maxLength: 30
+                  })}
+                />
+                {errors.theme && (
+                  <div className="mt-1 text-red-600">
+                    <small>{errors.theme.message}</small>
+                  </div>
+                )}
+              </div>
+              {/*BREAK */}
+              <div className="mb-5">
+                <label htmlFor="event_location" className="">
+                  Location of event:
+                </label>
+                <input
+                  type="text"
+                  id="event_location"
+                  placeholder="Town/City/State"
+                  autoComplete="false"
+                  className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-500 dark:bg-gray-900   focus:ring-4  ${
+                    errors.theme
+                      ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
+                      : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
+                  }`}
+                  {...register("location", {
+                    required: "location is required",
+                    maxLength: 30
+                  })}
+                />
+                {errors.location && (
+                  <div className="mt-1 text-red-600">
+                    <small>{errors.location.message}</small>
+                  </div>
+                )}
+              </div>
+              {/*BREAK */}
+              <div className="mb-5">
+                <label htmlFor="event_type">
+                  What type of event:
+                </label>
+                <div
+                  id="event_type"
+                  className="grid grid-cols-2 grid-rows-3 gap-4 w-full px-4 py-4 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-500 dark:bg-gray-900   focus:ring-4 ">
+                  <div>
+                    <input
+                      type="radio"
+                      id="baby-shower"
+                      name="event_type"
+                      value="Baby shower"
+                      className=""
+                    />
+                    <label htmlFor="baby-shower" className="ml-2">
+                      Baby Shower
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      type="radio"
+                      id="gender-reveal"
+                      name="event_type"
+                      value="Gender reveal"
+                      className=""
+                    />
+                    <label htmlFor="gender-reveal" className="ml-2">
+                      Gender Reveal
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      type="radio"
+                      id="birthday-party"
+                      name="event_type"
+                      value="Birthday Party"
+                    />
+                    <label htmlFor="birthday-party" className="ml-2">
+                      Birthday Party
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      type="radio"
+                      id="kids-party"
+                      name="event_type"
+                      value="Kids Party"
+                    />
+                    <label htmlFor="Kids-party" className="ml-2">
+                      Kids Party
+                    </label>
+                  </div>  
+                  <div>
+                    <input
+                      type="radio"
+                      id="wedding"
+                      name="event_type"
+                      value="Wedding"
+                    />
+                    <label htmlFor="wedding" className="ml-2">
+                      Wedding
+                    </label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      id="dinner"
+                      name="event_type"
+                      value="Dinner"
+                    />
+                    <label htmlFor="dinner" className="ml-2">
+                      Dinner Party
+                    </label>
+                  </div>
+
+                  <br />
+                  <div>
+                    <input
+                      type="radio"
+                      id="other"
+                      name="event_type"
+                      value={value}
+                    />
+                    <label htmlFor="other" className="ml-2">
+                      Other
+                      <input
+                        type="text"
+                        id="event_location"
+                        placeholder="please specify event type"
+                        autoComplete="false"
+                        onChange={handleChange}
+                        className={` px-4 py-1 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-500 dark:bg-gray-900   focus:ring-4  ${
+                          errors.type
+                            ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
+                            : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
+                        }`}
+                        {...register("type", {
+                          required:
+                            "Type is required if other otherwise type N/a",
+                          maxLength: 30,
+                          minLength: 3
+                        })}
+                      />
+                    </label>
+                    {errors.type && (
+                      <div className="mt-1 text-red-600">
+                        <small>{errors.type.message}</small>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+              {/*BREAK */}
+              <div className="mb-5">
+                <label htmlFor="event_theme" className="">
+                  Venue:
+                </label>
+                <input
+                  type="text"
+                  id="event_theme"
+                  placeholder="Your venue"
+                  autoComplete="false"
+                  className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-500 dark:bg-gray-900   focus:ring-4  ${
+                    errors.venue
+                      ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
+                      : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
+                  }`}
+                  {...register("venue", {
+                    required: "venue is required",
+                    maxLength: 30
+                  })}
+                />
+                {errors.venue && (
+                  <div className="mt-1 text-red-600">
+                    <small>{errors.venue.message}</small>
+                  </div>
+                )}
+              </div>
+              {/*BREAK */}
+              <div className="mb-5">
+                <label htmlFor="event_type">Budget for event:</label>
+                <div
+                  id="event_budget"
+                  className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-500 dark:bg-gray-900   focus:ring-4  ${
+                    errors.budget
+                      ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
+                      : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
+                  }`}
+                  {...register("budget", {
+                    required: "budget is required",
+                    
+                  })}>
+                  <div>
+                    <input
+                      type="radio"
+                      id="baby-shower"
+                      name="event_budget"
+                      value="Baby shower"
+                      className=""
+                    />
+                    <label htmlFor="baby-shower" className="ml-2">
+                      £0 - £2000
+                    </label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      id="baby-shower"
+                      name="event_budget"
+                      value="Baby shower"
+                      className=""
+                    />
+                    <label htmlFor="baby-shower" className="ml-2">
+                      £2000 - £4000
+                    </label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      id="baby-shower"
+                      name="event_budget"
+                      value="Baby shower"
+                      className=""
+                    />
+                    <label htmlFor="baby-shower" className="ml-2">
+                      £4000 - £6000
+                    </label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      id="baby-shower"
+                      name="event_budget"
+                      value="Baby shower"
+                      className=""
+                    />
+                    <label htmlFor="baby-shower" className="ml-2">
+                      £6000 or above
+                    </label>
+                  </div>
+
+                  {errors.budget && (
+                    <div className="mt-1 text-red-600">
+                      <small>{errors.budget.message}</small>
+                    </div>
+                  )}
+                </div>
               </div>
 
               <div className="mb-3">

@@ -7,3 +7,50 @@
 	scroll-behaviour: smooth
 }
 
+.dream{
+	-webkit-text-stroke: 1px rgb(100,100,100,0.5);
+	font-size:13rem;
+	font-family: caligriffiti
+}
+
+.image-card {
+  width: 30vw;
+  height: 30vw;
+  object-fit: cover;
+  border-radius: 15px
+}
+.image-card:hover {
+  scale: 1.2;
+  border: 4px solid rgb(200, 00, 200);
+  border-radius: 15px
+}
+
+#lightbox-img {
+  height: 70vh;
+  max-width: 70vw;
+  object-fit: cover;
+}
+
+#lightbox {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(200, 00, 200, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lightbox_btn {  
+  color: white;
+  font-size: 2.2rem;
+  z-index: 99;
+  margin: 1rem;
+  border-radius: 100%;
+  width: 100px;
+  height: 50px;
+  background-color: #000
+}

@@ -43,10 +43,10 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="dark:bg-black  text-black dark:text-gray-400 ">
-      <div className="max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8  ">
-        <div className="max-w-xl text-center mx-auto">
-          <h2 className="text-3xl font-bold sm:text-4xl">
+      className=" text-black dark:text-gray-400 pb-8  relative">
+      <div className="max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 mx-auto ">
+        <div className=" max-w-xl text-center mx-auto bg-black/75  z-20 relative">
+          <h2 className="text-3xl font-bold lg:text-5xl ">
             What we do...
           </h2>
 
@@ -55,14 +55,18 @@ const Services = () => {
             planning to day-of coordination. We can help you with any
             event from baby showers to Weddings.
           </p>
-          <a
-            href="/about#faq"
-            className="hover:cursor-pointer underline">
-            <p className="mt-4">frequently asked questions?</p>
-          </a>
         </div>
 
-        <div className="ml-auto mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
+        <div className=" absolute top-24 h-full hidden lg:grid grid-cols-1 lg:grid-cols-2 left-0 right-0 gap-8 p-8 dark:text-black">
+          <span className="text-10xl dream ">DREAM</span>
+          <span className="text-10xl dream">EVENTS</span>
+          <span className="text-10xl -mt-20  dream">EVENTS</span>
+          <span className="text-10xl -mt-20 ml-2 dream">DREAM</span>
+          <span className="text-10xl -mt-20  dream">DREAM</span>
+          <span className="text-10xl -mt-20 dream">EVENTS</span>
+        </div>
+
+        <div className="ml-auto mt-8 grid grid-cols-1  gap-8 md:mt-16 md:grid-cols-2 md:gap-20 lg:grid-cols-2">
           <div className="flex justify-center">
             <Card
               title="See our services"
@@ -94,7 +98,7 @@ const Services = () => {
               title="Book an event"
               description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
               image="dinner-party.jpg"
-              link="/gallery"
+              link="/contact#booking"
             />
           </div>
         </div>
