@@ -349,10 +349,10 @@ export default function Contact({ siteconfig }) {
                       <input
                         type="text"
                         id="event_location"
-                        placeholder="please specify event type"
+                        placeholder="event type"
                         autoComplete="false"
                         onChange={handleChange}
-                        className={` px-4 py-1 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-500 dark:bg-gray-900   focus:ring-4  ${
+                        className={`w-40 lg:w-full e px-4 py-1 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-500 dark:bg-gray-900   focus:ring-4  ${
                           errors.type
                             ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
                             : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
