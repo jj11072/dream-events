@@ -48,7 +48,7 @@ export default function PostList({ post, aspect, preloadImage }) {
         <h2 className="mt-2 text-lg font-semibold tracking-normal text-brand-primary dark:text-white">
           <Link href={`/post/${post.slug.current}`}>
             <span
-              className="     bg-gradient-to-r from-green-200 to-green-100 dark:from-purple-800 dark:to-purple-900
+              className="     bg-gradient-to-r from-pink-400 to-pink-300 dark:from-pink-600 dark:to-pink-700
           bg-[length:0px_10px]
           bg-left-bottom
           bg-no-repeat

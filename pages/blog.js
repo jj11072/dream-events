@@ -49,16 +49,16 @@ export default function Post(props) {
                   alt: ""
                 }
               ],
-              site_name: "Events by Jess"
+              site_name: "Dream Events"
             }}
             twitter={{
               cardType: "summary_large_image"
             }}
           />
           <Container>
-            <div className="bg-blue-400 mb-4">
+            <div className="0 mb-4">
               <Link href='/archive'>
-                <a>View archive</a>
+                <a className="underline">View archive</a>
               </Link>
             </div>
             <div className="grid gap-10 lg:gap-10 md:grid-cols-2 ">

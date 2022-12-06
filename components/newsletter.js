@@ -4,7 +4,7 @@ const newsletter = () => {
   const [showing, setShowing] = useState(true);
   return showing? (
     <div class="fixed inset-x-0 bottom-0 px-4 pb-3 z-20">
-      <div class="relative rounded-lg bg-pink-600/25 hover:bg-pink-700 px-4 py-3 pr-14 text-white ">
+      <div class="relative rounded-lg bg-pink-600 hover:bg-pink-700 px-4 py-3 pr-14 text-white ">
         <p class="text-left text-sm font-medium sm:text-center">
           For regular updates sign up to our 
           <a class="underline" href="/contact">

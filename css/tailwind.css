@@ -42,7 +42,6 @@ input, textarea, button, select, optgroup, option {
 }
 .image-card:hover {
   scale: 1.2;
-  border: 4px solid rgb(200, 00, 200);
   border-radius: 15px
 }
 

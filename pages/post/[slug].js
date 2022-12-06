@@ -108,7 +108,7 @@ export default function Post(props) {
 
               <div className="flex justify-center mt-3 space-x-3 text-gray-500 ">
                 <div className="flex items-center gap-3">
-                  <div className="relative flex-shrink-0 w-10 h-10">
+                  {/* <div className="relative flex-shrink-0 w-10 h-10">
                     {AuthorimageProps && (
                       <Image
                         src={AuthorimageProps.src}
@@ -122,7 +122,7 @@ export default function Post(props) {
                          "
                       />
                     )}
-                  </div>
+                  </div> */}
                   <div>
                     <p className="text-gray-800 dark:text-gray-400">
                       {post.author?.name}
@@ -150,7 +150,7 @@ export default function Post(props) {
             </div>
           </Container>
 
-          <div className="relative z-0 max-w-screen-lg mx-auto overflow-hidden lg:rounded-lg aspect-video">
+          {/* <div className="relative z-0 max-w-screen-lg mx-auto overflow-hidden lg:rounded-lg aspect-video">
             {imageProps && (
               <Image
                 src={imageProps.src}
@@ -163,17 +163,17 @@ export default function Post(props) {
                 objectFit="cover"
               />
             )}
-          </div>
+          </div> */}
 
           {post?.mainImage && <MainImage image={post.mainImage} />}
           <Container>
             <article className="max-w-screen-md mx-auto ">
-              <div className="mx-auto my-3 prose prose-base dark:prose-invert prose-a:text-blue-500">
+              <div className="mx-auto my-3 prose prose-base dark:prose-invert prose-a:text-pink-500">
                 {post.body && <PortableText value={post.body} />}
               </div>
               <div className="flex justify-center mt-7 mb-7">
-                <Link href="/">
-                  <a className="px-5 py-2 text-sm text-blue-600 rounded-full dark:text-blue-500 bg-brand-secondary/20 ">
+                <Link href="/blog">
+                  <a className="px-5 py-2 text-sm text-pink-600 rounded-full dark:text-pink-500 bg-brand-secondary/20 ">
                     ← View all posts
                   </a>
                 </Link>
